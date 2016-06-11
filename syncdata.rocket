@@ -1,4 +1,24 @@
 <sync rows="128">
-	<tracks/>
+	<tracks>
+		<track name="scene">
+			<key value="1" row="0" interpolation="0"/>
+		</track>
+		<track name="background_red">
+			<key value="0" row="0" interpolation="1"/>
+			<key value="255" row="32" interpolation="0"/>
+		</track>
+		<track name="background_green">
+			<key value="0" row="0" interpolation="1"/>
+			<key value="255" row="32" interpolation="0"/>
+		</track>
+		<track name="background_blue">
+			<key value="0" row="0" interpolation="1"/>
+			<key value="255" row="32" interpolation="0"/>
+		</track>
+		<track name="camera_position">
+			<key value="0" row="0" interpolation="1"/>
+			<key value="10000" row="32" interpolation="0"/>
+		</track>
+	</tracks>
 	<bookmarks/>
 </sync>
