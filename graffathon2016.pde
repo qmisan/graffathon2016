@@ -30,7 +30,8 @@ void draw() {
   int bg_blue  = ml.getIntValue("background_blue");
   
   background(bg_red, bg_green, bg_blue);
-  camera((float)cam_pos_x, (float)cam_pos_y, (float)cam_pos_z, (float)cam_dir_x, (float)cam_dir_y, (float)cam_dir_z, 0.0, 0.0, 0.0);
+  //camera((width/2.0)+(float)cam_pos_x, (height/2.0)+(float)cam_pos_y,  (height/ tan(PI*30.0 / 180.0))+(float)cam_pos_z, (float)cam_dir_x, (float)cam_dir_y, (float)cam_dir_z, 0, 1, 0);
+  camera(width/2.0, height/2.0, (height/2.0) / tan(PI*30.0 / 180.0), width/2.0, height/2.0, 0, 0, 1, 0);
   
   // Get current scene
   int scene = ml.getIntValue("scene");
