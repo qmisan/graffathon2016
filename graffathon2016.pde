@@ -1,39 +1,39 @@
 import moonlander.library.*;
  
-Moonlander moonlander;
+Moonlander ml;
 
 void setup() {
-  fullScreen();
-  moonlander = new Moonlander(this, new TimeController(4));
+  size(640,480,P3D);
+  ml = new Moonlander(this, new TimeController(4));
   // Start with scene 1
 
   // Always at the end of setup
-  moonlander.start();
+  ml.start();
 }
  
 void draw() {
   // Handles communication with Rocket. In player mode
   // does nothing. Must be called at the beginning of draw().
-  moonlander.update();
+  ml.update();
   
   // Common parameters for all scenes
-  double cam_pos_x = moonlander.getValue("cam_pos_x");
-  double cam_pos_y = moonlander.getValue("cam_pos_y");
-  double cam_pos_z = moonlander.getValue("cam_pos_z");
+  double cam_pos_x = ml.getValue("cam_pos_x");
+  double cam_pos_y = ml.getValue("cam_pos_y");
+  double cam_pos_z = ml.getValue("cam_pos_z");
   
-  double cam_dir_x = moonlander.getValue("cam_dir_x");
-  double cam_dir_y = moonlander.getValue("cam_dir_y");
-  double cam_dir_z = moonlander.getValue("cam_dir_z");
+  double cam_dir_x = ml.getValue("cam_dir_x");
+  double cam_dir_y = ml.getValue("cam_dir_y");
+  double cam_dir_z = ml.getValue("cam_dir_z");
   
-  int bg_red   = moonlander.getIntValue("background_red");
-  int bg_green = moonlander.getIntValue("background_green");
-  int bg_blue  = moonlander.getIntValue("background_blue");
+  int bg_red   = ml.getIntValue("background_red");
+  int bg_green = ml.getIntValue("background_green");
+  int bg_blue  = ml.getIntValue("background_blue");
   
   background(bg_red, bg_green, bg_blue);
   camera((float)cam_pos_x, (float)cam_pos_y, (float)cam_pos_z, (float)cam_dir_x, (float)cam_dir_y, (float)cam_dir_z, 0.0, 0.0, 0.0);
   
   // Get current scene
-  int scene = moonlander.getIntValue("scene");
+  int scene = ml.getIntValue("scene");
   
   // Run corresponding scene
   if (scene == 1)
