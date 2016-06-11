@@ -1,9 +1,13 @@
 import moonlander.library.*;
  
 Moonlander ml;
+PShader pp1;
+PGraphics canvas;
 
 void setup() {
-  size(640,480,P3D);
+  size(1600,900,P3D);
+  pp1 = loadShader("pp1.glsl");
+  canvas = createGraphics(width, height, P3D);
   ml = new Moonlander(this, new TimeController(4));
   // Start with scene 1
 
@@ -28,20 +32,42 @@ void draw() {
   int bg_red   = ml.getIntValue("background_red");
   int bg_green = ml.getIntValue("background_green");
   int bg_blue  = ml.getIntValue("background_blue");
+  float wobblysize = (float) ml.getValue("wobblySize");
+  float wobblyspeed = (float) ml.getValue("wobblySpeed");
+  float glowR = (float) ml.getValue("glowR");
+  float glowG = (float) ml.getValue("glowG");
+  float glowB = (float) ml.getValue("glowB");
+  float bw = (float) ml.getValue("bw");
+  float invert = (float) ml.getValue("invert");
   
-  background(bg_red, bg_green, bg_blue);
-  camera((float)cam_pos_x, (float)cam_pos_y, (float)cam_pos_z, (float)cam_dir_x, (float)cam_dir_y, (float)cam_dir_z, 0.0, 0.0, 0.0);
+  
   
   // Get current scene
   int scene = ml.getIntValue("scene");
   
   // Run corresponding scene
-  if (scene == 1)
-  {
-    scene1();
+  canvas.beginDraw();
+  //canvas.camera((float)cam_pos_x, (float)cam_pos_y, (float)cam_pos_z, (float)cam_dir_x, (float)cam_dir_y, (float)cam_dir_z, 0.0, 1.0, 0.0);
+  canvas.background(bg_red, bg_green, bg_blue);
+  switch (scene){
+  case 1:
+    scene1(canvas);
+    break;
+  case 2:
+    scene2(canvas);
+    break;
+  case -1:
+    scene_test(canvas);
+    break;
   }
-  else if (scene == 2)
-  {
-    scene2();
-  }
+  canvas.endDraw();
+  // post processing
+  shader(pp1);
+  pp1.set("wobblyspeed",wobblyspeed);
+  pp1.set("wobblysize",wobblysize);
+  pp1.set("glowValue",glowR,glowG,glowB);
+  pp1.set("time",millis()/1000.0);
+  pp1.set("bw",bw);
+  pp1.set("doInvert",invert);
+  image(canvas,0,0); 
 }

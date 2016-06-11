@@ -1,43 +1,55 @@
 <sync rows="128">
 	<tracks>
-		<track name="scene">
-			<key value="1" row="0" interpolation="0"/>
-			<key value="2" row="33" interpolation="0"/>
-		</track>
-		<track name="background_red">
-			<key value="0" row="0" interpolation="1"/>
-			<key value="255" row="32" interpolation="0"/>
-		</track>
-		<track name="background_green">
-			<key value="0" row="0" interpolation="1"/>
-			<key value="255" row="32" interpolation="0"/>
-		</track>
-		<track name="background_blue">
-			<key value="0" row="0" interpolation="1"/>
-			<key value="255" row="32" interpolation="0"/>
-		</track>
-		<track name="camera_position">
-			<key value="0" row="0" interpolation="1"/>
-			<key value="10000" row="32" interpolation="0"/>
-		</track>
 		<track name="cam_pos_x">
-			<key value="0" row="0" interpolation="1"/>
-			<key value="1000" row="32" interpolation="0"/>
+			<key row="0" value="0" interpolation="0"/>
 		</track>
 		<track name="cam_pos_y">
-			<key value="0" row="0" interpolation="0"/>
+			<key row="0" value="0" interpolation="0"/>
 		</track>
 		<track name="cam_pos_z">
-			<key value="0" row="0" interpolation="0"/>
+			<key row="0" value="1000" interpolation="0"/>
 		</track>
 		<track name="cam_dir_x">
-			<key value="0" row="0" interpolation="0"/>
+			<key row="0" value="800" interpolation="0"/>
 		</track>
 		<track name="cam_dir_y">
-			<key value="0" row="0" interpolation="0"/>
+			<key row="0" value="450" interpolation="0"/>
 		</track>
 		<track name="cam_dir_z">
-			<key value="0" row="0" interpolation="0"/>
+			<key row="0" value="0" interpolation="0"/>
+		</track>
+		<track name="background_red">
+			<key row="0" value="0" interpolation="0"/>
+		</track>
+		<track name="background_green">
+			<key row="0" value="0" interpolation="0"/>
+		</track>
+		<track name="background_blue">
+			<key row="0" value="0" interpolation="0"/>
+		</track>
+		<track name="wobblySize">
+			<key row="0" value="1" interpolation="0"/>
+		</track>
+		<track name="wobblySpeed">
+			<key row="0" value="8" interpolation="0"/>
+		</track>
+		<track name="glowR">
+			<key row="0" value="1" interpolation="0"/>
+		</track>
+		<track name="glowG">
+			<key row="0" value="1" interpolation="0"/>
+		</track>
+		<track name="glowB">
+			<key row="0" value="1" interpolation="0"/>
+		</track>
+		<track name="bw">
+			<key row="0" value="0" interpolation="0"/>
+		</track>
+		<track name="invert">
+			<key row="0" value="0" interpolation="0"/>
+		</track>
+		<track name="scene">
+			<key row="0" value="-1" interpolation="0"/>
 		</track>
 	</tracks>
 	<bookmarks/>
