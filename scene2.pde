@@ -1,21 +1,21 @@
-void scene2() {
+void scene2(PGraphics canvas) {
   // Call for recursive function
-  drawTree(width, height, 5);
+  drawTree(canvas, canvas.width, canvas.height, 5);
 }
 
-void drawTree(float w, float h, int d) {
-  translate(w/2,h);
+void drawTree(PGraphics canvas, float w, float h, int d) {
+  canvas.translate(w/2,h);
 
-  line(0,0,0,-100);
-  translate(0,-100);
+  canvas.line(0,0,0,-100);
+  canvas.translate(0,-100);
  
-  pushMatrix();
-  rotate(PI/6);
+  canvas.pushMatrix();
+  canvas.rotate(PI/6);
   if(d > 0) {
-  drawTree(w-1,h-1,d-1);
+  drawTree(canvas,w-1,h-1,d-1);
   }
   //line(0,0,0,-100);
-  popMatrix();
+  canvas.popMatrix();
  
   //rotate(-PI/6);
   
