@@ -1,0 +1,43 @@
+<sync rows="512">
+	<tracks>
+		<track name="cubeRot">
+			<key row="0" value="1" interpolation="1"/>
+			<key row="64" value="2" interpolation="0"/>
+		</track>
+		<track name="tunnelPosition">
+			<key row="0" value="-10000" interpolation="2"/>
+			<key row="32" value="-120" interpolation="1"/>
+			<key row="240" value="5000" interpolation="0"/>
+		</track>
+		<track name="viewRot">
+			<key row="0" value="0" interpolation="0"/>
+			<key row="96" value="0" interpolation="2"/>
+			<key row="135" value="0.1" interpolation="1"/>
+			<key row="176" value="0" interpolation="1"/>
+			<key row="216" value="-0.1" interpolation="1"/>
+			<key row="256" value="0" interpolation="0"/>
+		</track>
+		<track name="camFov">
+			<key row="0" value="1" interpolation="2"/>
+		</track>
+		<track name="sphereSize">
+			<key row="0" value="2" interpolation="0"/>
+		</track>
+		<track name="sphereScale">
+			<key row="0" value="1" interpolation="0"/>
+		</track>
+		<track name="spherePosition">
+			<key row="0" value="10000" interpolation="0"/>
+			<key row="216" value="2000" interpolation="2"/>
+			<key row="231" value="-20" interpolation="2"/>
+			<key row="236" value="3" interpolation="2"/>
+			<key row="239" value="0" interpolation="0"/>
+		</track>
+		<track name="ambientLight">
+			<key row="0" value="0" interpolation="1"/>
+			<key row="256" value="0" interpolation="1"/>
+			<key row="263" value="128" interpolation="0"/>
+		</track>
+	</tracks>
+	<bookmarks/>
+</sync>
