@@ -4,7 +4,7 @@ import ddf.minim.*;
 Moonlander ml;
 PShader pp1;
 PGraphics canvas;
-
+PFont font;
 PImage dogeImg;
 
 void setup() {
@@ -15,7 +15,9 @@ void setup() {
   
   // Load images
   dogeImg = loadImage("img/doge.png");
-
+  // Load fonts
+  font = createFont("Arial",32,true);
+  
   // Always at the end of setup
   ml.start();
 }
@@ -37,6 +39,8 @@ void draw() {
   int bg_red   = ml.getIntValue("background_red");
   int bg_green = ml.getIntValue("background_green");
   int bg_blue  = ml.getIntValue("background_blue");
+  
+  int credit_state = ml.getIntValue("credit_state");
   
   // Shader Parameters
   float wobblysize = (float) ml.getValue("wobblySize");
@@ -73,6 +77,12 @@ void draw() {
     break;
   case -2:
     scene_doge(canvas);
+    break;
+  //case 3:
+  //  scene_cubeption(canvas);
+  //  break;
+  case 99:
+    scene_credits(canvas,credit_state);
     break;
   }
   canvas.endDraw();
