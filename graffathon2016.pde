@@ -6,23 +6,12 @@ PShader pp1;
 PGraphics canvas;
 PFont font;
 PImage dogeImg;
-String credits[] = {"DEMO BY",
-                    "Merilohi (Graphics)",
-                    "Okalintu (Graphics)", 
-                    "Tatoma (Graphics)",
-                    "Marski (Sound)"};
-
-String tech_problems[] = {"Umm we are experiencing minor technical problems",
-                    "we lost red color?",
-                    "i think we lost all colors?", 
-                    "we are losing picture also",
-                    "Bye!"};
 
 void setup() {
   size(1280,720,P3D);
   pp1 = loadShader("pp1.glsl");
   canvas = createGraphics(width, height, P3D);
-  ml = Moonlander.initWithSoundtrack(this, "biisi/graffathon2.mp3", 120, 4);
+  ml = Moonlander.initWithSoundtrack(this, "biisi/graffathon2.mp3", 130, 4);
   
   // Load images
   dogeImg = loadImage("img/doge.png");
@@ -47,11 +36,13 @@ void draw() {
   double cam_dir_y = ml.getValue("cam_dir_y");
   double cam_dir_z = ml.getValue("cam_dir_z");
   
+  double cam_rotation = ml.getValue("cam_rotation");
+  
   int bg_red   = ml.getIntValue("background_red");
   int bg_green = ml.getIntValue("background_green");
   int bg_blue  = ml.getIntValue("background_blue");
   
-  int text_state = ml.getIntValue("text_state");
+  int credit_state = ml.getIntValue("credit_state");
   
   // Shader Parameters
   float wobblysize = (float) ml.getValue("wobblySize");
@@ -67,8 +58,10 @@ void draw() {
   int scene = ml.getIntValue("scene");
   
   //camera((width/2.0)+(float)cam_pos_x, (height/2.0)+(float)cam_pos_y,  (height/ tan(PI*30.0 / 180.0))+(float)cam_pos_z, (float)cam_dir_x, (float)cam_dir_y, (float)cam_dir_z, 0, 1, 0);
+  canvas.beginCamera();
   canvas.camera((width/2.0)+(float)cam_pos_x, (height/2.0)+(float)cam_pos_y, ((height/2.0) / tan(PI*30.0 / 180.0))+(float)cam_pos_z, (width/2.0)+(float)cam_dir_x, (height/2.0)+(float)cam_dir_y, (float)cam_dir_z, 0, 1, 0);
-  
+  canvas.rotate((float)cam_rotation);
+  canvas.endCamera();
   // Run corresponding scene
   canvas.beginDraw();
   //canvas.camera((float)cam_pos_x, (float)cam_pos_y, (float)cam_pos_z, (float)cam_dir_x, (float)cam_dir_y, (float)cam_dir_z, 0.0, 1.0, 0.0);
@@ -92,11 +85,11 @@ void draw() {
   case -2:
     scene_doge(canvas);
     break;
+  //case 3:
+  //  scene_cubeption(canvas);
+  //  break;
   case 99:
-    scene_text(canvas,credits,text_state,0.0,0.0);
-    break;
-  case 100:
-    scene_text(canvas,tech_problems,text_state,0.0,0.0);
+    scene_credits(canvas,credit_state);
     break;
   }
   canvas.endDraw();
