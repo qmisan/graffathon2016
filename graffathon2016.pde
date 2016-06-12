@@ -57,7 +57,7 @@ class Bar {
     quadBG[5] = color(255);
    
     // Start in center
-    position = new PVector();
+    position = new PVector(canvas.width/2.,canvas.height/2, 0);
     // Random velocity vector
     velocity = new PVector(0,0,0);
     // Random rotation
