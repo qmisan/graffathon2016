@@ -83,6 +83,9 @@ void draw() {
   case 3:
     tree3DScene(canvas);
     break;
+  case 5:
+    sierpinskScene(canvas);
+    break;
   case -1:
     scene_test(canvas);
     break;
