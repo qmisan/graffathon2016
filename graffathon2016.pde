@@ -6,6 +6,11 @@ PShader pp1;
 PGraphics canvas;
 PFont font;
 PImage dogeImg;
+String credits[] = {"DEMO BY",
+                    "Merilohi (Graphics)",
+                    "Okalintu (Graphics)", 
+                    "Tatoma (Graphics)",
+                    "Marski (Sound)"};
 
 void setup() {
   size(1280,720,P3D);
@@ -78,11 +83,8 @@ void draw() {
   case -2:
     scene_doge(canvas);
     break;
-  //case 3:
-  //  scene_cubeption(canvas);
-  //  break;
   case 99:
-    scene_credits(canvas,credit_state);
+    scene_text(canvas,credits,credit_state,0.0,0.0);
     break;
   }
   canvas.endDraw();
