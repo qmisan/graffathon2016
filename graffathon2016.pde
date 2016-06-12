@@ -6,6 +6,7 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 import moonlander.library.*;
+
 Minim minim;
 AudioInput  ap;
 FFT          fft;
@@ -143,15 +144,17 @@ class Bar {
   }
   // Display method
   void display() {
+    
     canvas.pushMatrix();
     canvas.translate(position.x-w/2, position.y-h/2, position.z);
-    noStroke();
+    //  canvas.translate(canvas.width/2 ,canvas.height/2, 200);
+    canvas.noStroke();
     drawCube(); // Farm out shape to another method
     canvas.popMatrix();
   }
 }
 
-Bar[] bars = new Bar[512/2+1];
+Bar[] bars = new Bar[1024/2+1];
 void setup() {
   size(1280,720,P3D);
   pp1 = loadShader("pp1.glsl");
@@ -166,11 +169,8 @@ void setup() {
   minim = new Minim(this);
   ap = minim.getLineIn(Minim.STEREO, 1024);
   fft = new FFT(ap.bufferSize(),ap.sampleRate());
+
   
-  for(int i = 0; i < bars.length; i++) {
-    bars[i] =  new Bar(10, 50, 20);
-    bars[i].position.add(new PVector(11*i, 0, 0));
-  }
   // Always at the end of setup
   ml.start();
 }
