@@ -30,11 +30,3 @@ void drawTree(int w, int h, int d) {
     canvas.popMatrix();
   }
 }
-
-//float increaseLine() {
-//    float progress = (float)(millis()-lineStartTime)/duration;
-//    if(progress <= 1.0) return (-100 * progress);
-//    else return -100.0;
-//}
-
-
