@@ -1,6 +1,3 @@
-int lineStartTime;
-int duration = 2000;
-
 void tree3DScene(PGraphics canvas) {
   // Move base matrix abit so recursion starts from bottom
   canvas.translate(canvas.width/2,canvas.height);

@@ -9,18 +9,13 @@ void tree2DScene(PGraphics canvas) {
   drawTree(canvas.width, canvas.height, ml.getIntValue("depth"));
 }
 
-void drawTree(float w, float h, int d) {
+void drawTree(int w, int h, int d) {
   float line_len = -100;
-  // Draw a line
-  if (d == 0) // Last is drawn slowly
-  {
-    int lineStartTime = millis();
-    line_len = increaseLine();
-    canvas.line(0,0,0,line_len);
-  }
-  else if (d > 0) {
-    canvas.line(0,0,0,line_len);
-    canvas.translate(0,-100);
+
+  canvas.line(0,0,0,line_len);
+  
+  if (d > 0) {
+    canvas.translate(0,line_len);
     
     // Right
     canvas.pushMatrix();
@@ -36,10 +31,10 @@ void drawTree(float w, float h, int d) {
   }
 }
 
-float increaseLine() {
-    float progress = (float)(millis()-lineStartTime)/duration;
-    if(progress <= 1.0) return (-100 * progress);
-    else return -100.0;
-}
+//float increaseLine() {
+//    float progress = (float)(millis()-lineStartTime)/duration;
+//    if(progress <= 1.0) return (-100 * progress);
+//    else return -100.0;
+//}
 
 

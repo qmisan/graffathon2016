@@ -1,5 +1,6 @@
 import moonlander.library.*;
- 
+import ddf.minim.*;
+
 Moonlander ml;
 PShader pp1;
 PGraphics canvas;
@@ -10,7 +11,7 @@ void setup() {
   size(1280,720,P3D);
   pp1 = loadShader("pp1.glsl");
   canvas = createGraphics(width, height, P3D);
-  ml = new Moonlander(this, new TimeController(4));
+  ml = Moonlander.initWithSoundtrack(this, "biisi/graffathon2.mp3", 120, 4);
   
   // Load images
   dogeImg = loadImage("img/doge.png");
@@ -51,7 +52,7 @@ void draw() {
   int scene = ml.getIntValue("scene");
   
   //camera((width/2.0)+(float)cam_pos_x, (height/2.0)+(float)cam_pos_y,  (height/ tan(PI*30.0 / 180.0))+(float)cam_pos_z, (float)cam_dir_x, (float)cam_dir_y, (float)cam_dir_z, 0, 1, 0);
-  canvas.camera((width/2.0)+(float)cam_pos_x, (height/2.0)+(float)cam_pos_y, ((height/2.0) / tan(PI*30.0 / 180.0))+(float)cam_pos_z, (width/2.0)+(float)cam_dir_x, height/2.0, 0, 0, 1, 0);
+  canvas.camera((width/2.0)+(float)cam_pos_x, (height/2.0)+(float)cam_pos_y, ((height/2.0) / tan(PI*30.0 / 180.0))+(float)cam_pos_z, (width/2.0)+(float)cam_dir_x, (height/2.0)+(float)cam_dir_y, (float)cam_dir_z, 0, 1, 0);
   
   // Run corresponding scene
   canvas.beginDraw();
@@ -62,7 +63,10 @@ void draw() {
     scene1(canvas);
     break;
   case 2:
-    scene2(canvas);
+    tree2DScene(canvas);
+    break;
+  case 3:
+    tree3DScene(canvas);
     break;
   case -1:
     scene_test(canvas);

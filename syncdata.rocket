@@ -1,107 +1,157 @@
 <sync rows="256">
 	<tracks>
 		<track name="cam_pos_x">
-			<key value="0" row="0" interpolation="0"/>
-			<key value="0" row="48" interpolation="0"/>
-			<key value="0" row="72" interpolation="1"/>
-			<key value="1000" row="88" interpolation="0"/>
-			<key value="0" row="112" interpolation="0"/>
+			<key interpolation="0" row="0" value="0"/>
+			<key interpolation="0" row="48" value="0"/>
+			<key interpolation="1" row="80" value="0"/>
+			<key interpolation="0" row="112" value="30"/>
+			<key interpolation="1" row="155" value="0"/>
+			<key interpolation="0" row="171" value="1000"/>
+			<key interpolation="0" row="176" value="0"/>
 		</track>
 		<track name="cam_pos_y">
-			<key value="0" row="0" interpolation="0"/>
-			<key value="0" row="48" interpolation="0"/>
-			<key value="0" row="112" interpolation="0"/>
+			<key interpolation="0" row="0" value="0"/>
+			<key interpolation="0" row="48" value="0"/>
+			<key interpolation="0" row="80" value="-400"/>
+			<key interpolation="0" row="113" value="5"/>
+			<key interpolation="0" row="176" value="0"/>
 		</track>
 		<track name="cam_pos_z">
-			<key value="0" row="0" interpolation="1"/>
-			<key value="-1000" row="24" interpolation="0"/>
-			<key value="0" row="48" interpolation="0"/>
-			<key value="0" row="112" interpolation="1"/>
-			<key value="1000" row="136" interpolation="0"/>
+			<key interpolation="1" row="0" value="0"/>
+			<key interpolation="0" row="24" value="-1000"/>
+			<key interpolation="0" row="48" value="0"/>
+			<key interpolation="0" row="80" value="-500"/>
+			<key interpolation="1" row="176" value="0"/>
+			<key interpolation="0" row="200" value="1000"/>
 		</track>
 		<track name="cam_dir_x">
-			<key value="0" row="0" interpolation="0"/>
-			<key value="0" row="48" interpolation="0"/>
-			<key value="0" row="88" interpolation="1"/>
-			<key value="500" row="104" interpolation="0"/>
-			<key value="0" row="112" interpolation="0"/>
+			<key interpolation="0" row="0" value="0"/>
+			<key interpolation="0" row="48" value="0"/>
+			<key interpolation="1" row="113" value="0"/>
+			<key interpolation="0" row="136" value="10"/>
+			<key interpolation="1" row="152" value="0"/>
+			<key interpolation="0" row="168" value="500"/>
+			<key interpolation="0" row="176" value="0"/>
 		</track>
 		<track name="cam_dir_y">
-			<key value="450" row="0" interpolation="0"/>
-			<key value="0" row="48" interpolation="0"/>
-			<key value="0" row="112" interpolation="0"/>
+			<key interpolation="0" row="0" value="450"/>
+			<key interpolation="0" row="48" value="0"/>
+			<key interpolation="1" row="113" value="0"/>
+			<key interpolation="0" row="136" value="100"/>
+			<key interpolation="0" row="176" value="0"/>
 		</track>
 		<track name="cam_dir_z">
-			<key value="0" row="0" interpolation="0"/>
-			<key value="0" row="48" interpolation="0"/>
-			<key value="0" row="112" interpolation="0"/>
+			<key interpolation="0" row="0" value="0"/>
+			<key interpolation="0" row="48" value="0"/>
+			<key interpolation="0" row="113" value="100"/>
+			<key interpolation="0" row="176" value="0"/>
 		</track>
 		<track name="background_red">
-			<key value="0" row="0" interpolation="0"/>
-			<key value="255" row="48" interpolation="0"/>
+			<key interpolation="0" row="0" value="0"/>
+			<key interpolation="0" row="48" value="255"/>
 		</track>
 		<track name="background_green">
-			<key value="0" row="0" interpolation="0"/>
-			<key value="255" row="48" interpolation="0"/>
+			<key interpolation="0" row="0" value="0"/>
+			<key interpolation="0" row="48" value="255"/>
 		</track>
 		<track name="background_blue">
-			<key value="0" row="0" interpolation="0"/>
-			<key value="255" row="48" interpolation="0"/>
+			<key interpolation="0" row="0" value="0"/>
+			<key interpolation="0" row="48" value="255"/>
 		</track>
 		<track name="wobblySize">
-			<key value="1" row="0" interpolation="1"/>
-			<key value="1" row="16" interpolation="1"/>
-			<key value="50" row="40" interpolation="0"/>
-			<key value="0" row="48" interpolation="0"/>
-			<key value="0" row="88" interpolation="1"/>
-			<key value="1" row="128" interpolation="0"/>
+			<key interpolation="1" row="0" value="1"/>
+			<key interpolation="1" row="16" value="1"/>
+			<key interpolation="0" row="40" value="50"/>
+			<key interpolation="0" row="48" value="0"/>
+			<key interpolation="1" row="152" value="0"/>
+			<key interpolation="0" row="192" value="1"/>
 		</track>
 		<track name="wobblySpeed">
-			<key value="1" row="0" interpolation="1"/>
-			<key value="20" row="40" interpolation="0"/>
-			<key value="1" row="48" interpolation="0"/>
-			<key value="1" row="88" interpolation="1"/>
-			<key value="2" row="104" interpolation="0"/>
+			<key interpolation="1" row="0" value="1"/>
+			<key interpolation="0" row="40" value="20"/>
+			<key interpolation="0" row="48" value="1"/>
+			<key interpolation="1" row="152" value="1"/>
+			<key interpolation="0" row="168" value="2"/>
 		</track>
 		<track name="glowR">
-			<key value="1" row="0" interpolation="1"/>
-			<key value="2" row="16" interpolation="1"/>
-			<key value="10" row="40" interpolation="0"/>
-			<key value="1" row="48" interpolation="0"/>
-			<key value="1" row="88" interpolation="1"/>
-			<key value="2" row="112" interpolation="0"/>
+			<key interpolation="1" row="0" value="1"/>
+			<key interpolation="1" row="16" value="2"/>
+			<key interpolation="0" row="40" value="10"/>
+			<key interpolation="0" row="48" value="1"/>
+			<key interpolation="1" row="152" value="1"/>
+			<key interpolation="0" row="176" value="2"/>
 		</track>
 		<track name="glowG">
-			<key value="1" row="0" interpolation="1"/>
-			<key value="2" row="16" interpolation="1"/>
-			<key value="10" row="40" interpolation="0"/>
-			<key value="1" row="48" interpolation="0"/>
-			<key value="1" row="88" interpolation="1"/>
-			<key value="2" row="112" interpolation="0"/>
+			<key interpolation="1" row="0" value="1"/>
+			<key interpolation="1" row="16" value="2"/>
+			<key interpolation="0" row="40" value="10"/>
+			<key interpolation="0" row="48" value="1"/>
+			<key interpolation="1" row="152" value="1"/>
+			<key interpolation="0" row="176" value="2"/>
 		</track>
 		<track name="glowB">
-			<key value="1" row="0" interpolation="0"/>
-			<key value="1" row="48" interpolation="0"/>
-			<key value="0" row="112" interpolation="1"/>
-			<key value="1" row="120" interpolation="1"/>
-			<key value="5" row="128" interpolation="0"/>
+			<key interpolation="0" row="0" value="1"/>
+			<key interpolation="0" row="48" value="1"/>
+			<key interpolation="1" row="176" value="0"/>
+			<key interpolation="1" row="184" value="1"/>
+			<key interpolation="0" row="192" value="5"/>
 		</track>
 		<track name="bw">
-			<key value="0" row="0" interpolation="0"/>
-			<key value="0" row="48" interpolation="0"/>
+			<key interpolation="0" row="0" value="0"/>
+			<key interpolation="0" row="48" value="0"/>
 		</track>
 		<track name="invert">
-			<key value="0" row="0" interpolation="0"/>
-			<key value="1" row="48" interpolation="0"/>
+			<key interpolation="0" row="0" value="0"/>
+			<key interpolation="0" row="48" value="1"/>
 		</track>
 		<track name="scene">
-			<key value="-2" row="0" interpolation="0"/>
-			<key value="2" row="48" interpolation="0"/>
+			<key interpolation="0" row="0" value="-2"/>
+			<key interpolation="0" row="48" value="2"/>
 		</track>
 		<track name="depth">
-			<key value="0" row="48" interpolation="1"/>
-			<key value="14" row="88" interpolation="0"/>
+			<key interpolation="0" row="48" value="0"/>
+			<key interpolation="0" row="56" value="1"/>
+			<key interpolation="0" row="64" value="2"/>
+			<key interpolation="0" row="72" value="3"/>
+			<key interpolation="0" row="80" value="4"/>
+			<key interpolation="0" row="88" value="5"/>
+			<key interpolation="0" row="96" value="6"/>
+			<key interpolation="0" row="104" value="7"/>
+			<key interpolation="0" row="112" value="8"/>
+			<key interpolation="0" row="120" value="9"/>
+			<key interpolation="0" row="128" value="10"/>
+			<key interpolation="0" row="136" value="11"/>
+			<key interpolation="0" row="144" value="12"/>
+		</track>
+		<track name="noise">
+			<key interpolation="0" row="48" value="0"/>
+			<key interpolation="0" row="55" value="1"/>
+			<key interpolation="0" row="56" value="0"/>
+			<key interpolation="0" row="63" value="1"/>
+			<key interpolation="0" row="64" value="0"/>
+			<key interpolation="0" row="71" value="1"/>
+			<key interpolation="0" row="72" value="0"/>
+			<key interpolation="0" row="79" value="1"/>
+			<key interpolation="0" row="80" value="0"/>
+			<key interpolation="0" row="87" value="1"/>
+			<key interpolation="0" row="88" value="0"/>
+			<key interpolation="0" row="95" value="2"/>
+			<key interpolation="0" row="96" value="0"/>
+			<key interpolation="0" row="103" value="1"/>
+			<key interpolation="0" row="104" value="0"/>
+			<key interpolation="0" row="111" value="1"/>
+			<key interpolation="0" row="112" value="0"/>
+			<key interpolation="0" row="119" value="1"/>
+			<key interpolation="0" row="120" value="0"/>
+			<key interpolation="0" row="127" value="1"/>
+			<key interpolation="0" row="128" value="0"/>
+			<key interpolation="0" row="135" value="1"/>
+			<key interpolation="0" row="136" value="0"/>
+			<key interpolation="0" row="143" value="1"/>
 		</track>
 	</tracks>
-	<bookmarks/>
+	<bookmarks>
+		<bookmark row="48"/>
+		<bookmark row="80"/>
+	</bookmarks>
 </sync>
