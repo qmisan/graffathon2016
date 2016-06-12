@@ -7,7 +7,7 @@ PGraphics canvas;
 PImage dogeImg;
 
 void setup() {
-  size(1600,900,P3D);
+  size(1280,720,P3D);
   pp1 = loadShader("pp1.glsl");
   canvas = createGraphics(width, height, P3D);
   ml = new Moonlander(this, new TimeController(4));
@@ -36,6 +36,8 @@ void draw() {
   int bg_red   = ml.getIntValue("background_red");
   int bg_green = ml.getIntValue("background_green");
   int bg_blue  = ml.getIntValue("background_blue");
+  
+  // Shader Parameters
   float wobblysize = (float) ml.getValue("wobblySize");
   float wobblyspeed = (float) ml.getValue("wobblySpeed");
   float glowR = (float) ml.getValue("glowR");
@@ -48,7 +50,7 @@ void draw() {
   int scene = ml.getIntValue("scene");
   
   //camera((width/2.0)+(float)cam_pos_x, (height/2.0)+(float)cam_pos_y,  (height/ tan(PI*30.0 / 180.0))+(float)cam_pos_z, (float)cam_dir_x, (float)cam_dir_y, (float)cam_dir_z, 0, 1, 0);
-  canvas.camera(width/2.0, height/2.0, ((height/2.0) / tan(PI*30.0 / 180.0))+(float)cam_pos_z, width/2.0, height/2.0, 0, 0, 1, 0);
+  canvas.camera((width/2.0)+(float)cam_pos_x, (height/2.0)+(float)cam_pos_y, ((height/2.0) / tan(PI*30.0 / 180.0))+(float)cam_pos_z, (width/2.0)+(float)cam_dir_x, height/2.0, 0, 0, 1, 0);
   
   // Run corresponding scene
   canvas.beginDraw();
