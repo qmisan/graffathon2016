@@ -1,7 +1,7 @@
 int lineStartTime;
 int duration = 2000;
 
-void scene2(PGraphics canvas) {
+void tree3DScene(PGraphics canvas) {
   // Move base matrix abit so recursion starts from bottom
   canvas.translate(canvas.width/2,canvas.height);
   
@@ -41,5 +41,3 @@ float increaseLine() {
     if(progress <= 1.0) return (-100 * progress);
     else return -100.0;
 }
-
-
