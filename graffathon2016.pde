@@ -213,13 +213,13 @@ void draw() {
   //camera((width/2.0)+(float)cam_pos_x, (height/2.0)+(float)cam_pos_y,  (height/ tan(PI*30.0 / 180.0))+(float)cam_pos_z, (float)cam_dir_x, (float)cam_dir_y, (float)cam_dir_z, 0, 1, 0);
   canvas.beginCamera();
   canvas.camera((width/2.0)+(float)cam_pos_x, (height/2.0)+(float)cam_pos_y, ((height/2.0) / tan(PI*30.0 / 180.0))+(float)cam_pos_z, (width/2.0)+(float)cam_dir_x, (height/2.0)+(float)cam_dir_y, (float)cam_dir_z, 0, 1, 0);
-  canvas.rotate((float)cam_rotation);
+  canvas.rotate((float)canvas_rotation);
   canvas.endCamera();
   // Run corresponding scene
   canvas.beginDraw();
   //canvas.camera((float)cam_pos_x, (float)cam_pos_y, (float)cam_pos_z, (float)cam_dir_x, (float)cam_dir_y, (float)cam_dir_z, 0.0, 1.0, 0.0);
   canvas.background(bg_red, bg_green, bg_blue);
-  canvas.rotate(can_rotation);
+  canvas.rotate((float)canvas_rotation);
   switch (scene){
   case 1:
     scene1(canvas);
