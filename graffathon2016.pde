@@ -48,7 +48,7 @@ void draw() {
   double cam_dir_y = ml.getValue("cam_dir_y");
   double cam_dir_z = ml.getValue("cam_dir_z");
   
-  double cam_rotation = ml.getValue("cam_rotation");
+  double canvas_rotation = ml.getValue("can_rotation");
   
   int bg_red   = ml.getIntValue("background_red");
   int bg_green = ml.getIntValue("background_green");
@@ -78,6 +78,7 @@ void draw() {
   canvas.beginDraw();
   //canvas.camera((float)cam_pos_x, (float)cam_pos_y, (float)cam_pos_z, (float)cam_dir_x, (float)cam_dir_y, (float)cam_dir_z, 0.0, 1.0, 0.0);
   canvas.background(bg_red, bg_green, bg_blue);
+  canvas.rotate(can_rotation);
   switch (scene){
   case 1:
     scene1(canvas);
