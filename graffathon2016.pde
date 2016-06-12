@@ -40,6 +40,7 @@ void draw() {
   // Shader Parameters
   float wobblysize = (float) ml.getValue("wobblySize");
   float wobblyspeed = (float) ml.getValue("wobblySpeed");
+  float noise = (float) ml.getValue("noise");
   float glowR = (float) ml.getValue("glowR");
   float glowG = (float) ml.getValue("glowG");
   float glowB = (float) ml.getValue("glowB");
@@ -76,6 +77,7 @@ void draw() {
   shader(pp1);
   pp1.set("wobblyspeed",wobblyspeed);
   pp1.set("wobblysize",wobblysize);
+  pp1.set("noiseSize",noise);
   pp1.set("glowValue",glowR,glowG,glowB);
   pp1.set("time",millis()/1000.0);
   pp1.set("bw",bw);
