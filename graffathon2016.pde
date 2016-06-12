@@ -99,7 +99,7 @@ void draw() {
     break;
 
   case 99:
-    scene_credits(canvas,credit_state);
+    scene_text(canvas,credits,text_state,0.0,0.0);
     break;
   case 100:
     scene_text(canvas,tech_problems,text_state,0.0,0.0);

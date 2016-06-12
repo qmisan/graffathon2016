@@ -137,72 +137,10 @@ Minim minim;
 AudioInput  ap;
 AudioPlayer app;
 FFT          fft;
-Moonlander ml;
 BeatDetect beat;
 //Moonlander ml = new Moonlander(this, new TimeController(4));
 Bar[] bars = new Bar[512/2+1];
 
-void setup() {
-  size(1280,720, P3D);
-  //fullScreen(P3D);
-  minim = new Minim(this);
-  loop();
-  int timesize = 1024;
-  ml = Moonlander.initWithSoundtrack(this, "data/alpit.mp3", 127, 8);
-  //app = minim.loadFile("data/alpit.mp3", 1024);
-  ap = minim.getLineIn(Minim.STEREO, timesize);
-  fft = new FFT(ap.bufferSize(),ap.sampleRate());
-  beat = new BeatDetect();
-  rectMode(CORNERS);
-
-  ml.start();
-  
-  for(int i = 0; i < bars.length; i++) {
-    //translate(60, 0, 0);
-    
-    float c = random(30, 100);
-    bars[i] =  new Bar(10, 50, 20);
-    bars[i].position.add(new PVector(11*i, 0, 0));
-    //drawBars(50, r);
-    //translate(0, -(pos.y-prev/2), 0);
-  }
-}
-
-double oldtime = 0;
-void draw() {
-  ml.update();
-
-  background(0);
-  lights();
-  translate((float)ml.getValue("camerax"), (float)ml.getValue("cameray"), (float)ml.getValue("cameraz"));
-  rotateY(-0.2);
-  rotateX(-0.4);
-  rotateZ(0.2);
-  
-  long x = (long)ml.getValue("height");
-  /*if(ml.getCurrentTime() >= oldtime) {
-    ap.play();
-    println("playing");
-  } else {
-    ap.pause();
-    println("stopped playing");
-  }*/
-  
-  fft.forward(ap.mix);
-  beat.detect(ap.mix); 
-  fft.linAverages(30);
-  randomSeed(x);
-  for (int i = 0; i < fft.avgSize(); i++) {  
-    //if(beat.isOnset()) bars[i].h = 50;
-    //else bars[i].h = 10;
-    //println(fft.getBand(i)*20);
-    bars[i].h = 10 + fft.getBand(i)*4;
-    bars[i].update();
-    bars[i].display();
-  }
-  oldtime = ml.getCurrentTime();
-  delay(50);
-}
 
 void drawBars(float x, float y) {
     
