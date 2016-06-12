@@ -153,7 +153,7 @@ class Bar {
 
 Bar[] bars = new Bar[512/2+1];
 void setup() {
-  size(1280,720,P3D);
+  size(1920,1080,P3D);
   pp1 = loadShader("pp1.glsl");
   canvas = createGraphics(width, height, P3D);
   ml = Moonlander.initWithSoundtrack(this, "biisi/graffathon2.mp3", 130, 4);
